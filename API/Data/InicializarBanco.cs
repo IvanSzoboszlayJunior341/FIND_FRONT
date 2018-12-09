@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Find.Models;
 
@@ -29,6 +30,31 @@ namespace Find.Data
             };
             contexto.Professor.Add(professor);
             contexto.SaveChanges();
+            
+            var pagamento = new Pagamento()
+            {
+                dataPagamento = DateTime.Now,
+                statusPagamento = "Ativo",
+                codTransacao = "216846232",
+                valorPagamento = 100.00,
+                IdUsuario = 1
+            };
+            contexto.Pagamento.Add(pagamento);
+            contexto.SaveChanges();
+
+            var curso = new Curso()
+            {
+                nomeCurso = "MySQL",
+                Requisitos = "Saiba como funciona um Banco de Dados e como eles surgiram no mundo da tecnologia.",
+                Categoria = "Banco de dados"
+            };
+
+
+
+
+
+
+            
         }
     }
 }

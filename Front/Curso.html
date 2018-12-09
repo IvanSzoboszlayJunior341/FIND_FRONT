@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Cursos</title>
+    <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+    <!-- 
+    Smoothy Template 
+    http://www.templatemo.com/tm-396-smoothy
+    -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/templatemo_style.css" rel="stylesheet">
+   	<link rel="stylesheet" href="css/templatemo_misc.css">
+
+
+    <link rel="stylesheet" href="css/slimbox2.css" type="text/css" media="screen" /> 
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,600' rel='stylesheet' type='text/css'>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/ddsmoothmenu.js"></script>
+
+    <!-- Css do BOOTstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+<style>
+  h1{
+    color: #000;
+    background-color: #fff;
+    font-size: 50px;
+  }
+  p{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+</style>
+
+
+  </head>
+<body>
+    <header>
+    <!-- start menu -->
+
+      <div class="container templatemo_container">
+        <div class="row">
+          <div class="col-sm-3 col-md-3">
+            <div class="logo">
+              <a href="index.html"><img src="images/templatemo_logo.png" alt="smoothy html5 template"></a>
+            </div>
+          </div>
+          <div class="col-sm-9 col-md-9 templatemo_col9">
+          	<div id="top-menu">
+            <nav class="mainMenu">
+              <ul class="nav">
+                <li><a class="menu" href="index.html">Home</a></li>
+                <li><a class="menu" href="Curso.html">Cursos</a></li>
+                <li><a class="menu" href="login.html">Entrar</a></li>
+                <li><a class="menu" style="background-color:green;color: white" href="CadCadastro.html">Matricule-se</a></li>
+              </ul>
+            </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <div class="container">
+    <div class="row ">
+      <div class="card" style="width: 40rem;">
+        <img class="card-img-top" src="../Front/images/mysql.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h2 class="card-title">Curso de MySQL</h2>
+          <p class="card-text"></p>
+          <a href="Mysql.html" class="btn btn-primary">Mais</a>
+        </div>
+      </div>
+
+      <div class="card" style="width: 40rem;">
+          <img class="card-img-top" src="../Front/images/php.png" alt="Card image cap">
+          <div class="card-body">
+            <h2 class="card-title">Curso de PhP</h2>
+            <p class="card-text"></p>
+            <a href="php.html" class="btn btn-primary">Mais</a>
+          </div>
+        </div>
+    </div>
+      
+
+      <!-- <div class="card" style="width: 40rem;">
+        <img class="card-img-top" src="../Front/images/java.jpeg" alt="Card image cap">
+        <div class="card-body">
+          <h2 class="card-title">Curso de Java</h2>
+          <p class="card-text"></p>
+          <a href="#" class="btn btn-primary">Mais</a>
+        </div>
+      </div>
+      
+    </div> -->
+
+      
+
+      <div id="funciona" class="">
+
+      </div>
+      
+    </div>
+
+
+
+
+
+    <!-- end menu -->
+    <script type="text/JavaScript">
+      
+      var url="http://localhost:5000/API/Curso";
+
+      // var caminho = window.location.search;
+      //  caminho = caminho.substring(5,caminho.lenght);
+
+      var xhr = new XMLHttpRequest();
+      
+      xhr.open("GET",url,true);
+      
+
+      xhr.setRequestHeader("Authorization","Bearer");
+
+
+      xhr.onload = function(){        
+        var data = JSON.parse(this.response);
+      //    console.log('data');
+        if(xhr.status >= 200 && xhr.status < 400){
+          data.forEach(dados => {
+            var estrutura ="<hr>"+ "<div>";
+            estrutura += "<h1>"+dados.nomeCurso+"</h1>";
+            estrutura += "<br>"
+            estrutura +="<p>"+"Sobre o Curso: "+dados.requisitos+"</p>";
+            estrutura +="<p>Categoria: "+dados.categoria+"</p>";
+            estrutura += "</div>";
+
+            document.getElementById("funciona").innerHTML+=estrutura;
+
+            console.log(dados)
+          });
+        } 
+        else{
+          console.log('error')
+        }
+      }
+      xhr.send();
+
+  </script>
+
+
+    
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>  
+</body>
+</html>

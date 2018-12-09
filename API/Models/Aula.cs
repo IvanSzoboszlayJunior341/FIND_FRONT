@@ -12,10 +12,12 @@ namespace Find.Models
         public int Id { get; set; }
         
         [Required]
+        public string nomeAula { get; set;}
+
+        [Required]
         [StringLength(255, ErrorMessage = "A aula deve ter uma prévia de até 255 caracteres.")]       
         public string aulaContexto { get; set; }
-        [Required]
-        public string nomeAula { get; set;}
+
         [Required]
         [StringLength(255)]
         public string aulaCaminho { get; set; }

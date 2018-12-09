@@ -34,6 +34,8 @@ namespace Find.Controllers
         {
             if(!ModelState.IsValid)
                 return BadRequest("Não foi possível enviar os dados para o cadastro, pois os dados não seguem o padrão de cadastro");
+
+                
             
             contexto.Usuario.Add(usuario);
             int rs = contexto.SaveChanges();

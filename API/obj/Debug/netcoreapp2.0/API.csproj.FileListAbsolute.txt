@@ -1,11 +1,33 @@
-C:\Users\paulo.rflima1\Desktop\FIND\API\bin\Debug\netcoreapp2.0\API.deps.json
-C:\Users\paulo.rflima1\Desktop\FIND\API\bin\Debug\netcoreapp2.0\API.runtimeconfig.json
-C:\Users\paulo.rflima1\Desktop\FIND\API\bin\Debug\netcoreapp2.0\API.runtimeconfig.dev.json
-C:\Users\paulo.rflima1\Desktop\FIND\API\bin\Debug\netcoreapp2.0\API.dll
-C:\Users\paulo.rflima1\Desktop\FIND\API\bin\Debug\netcoreapp2.0\API.pdb
-C:\Users\paulo.rflima1\Desktop\FIND\API\obj\Debug\netcoreapp2.0\API.csprojResolveAssemblyReference.cache
-C:\Users\paulo.rflima1\Desktop\FIND\API\obj\Debug\netcoreapp2.0\API.csproj.CoreCompileInputs.cache
-C:\Users\paulo.rflima1\Desktop\FIND\API\obj\Debug\netcoreapp2.0\API.AssemblyInfoInputs.cache
-C:\Users\paulo.rflima1\Desktop\FIND\API\obj\Debug\netcoreapp2.0\API.AssemblyInfo.cs
-C:\Users\paulo.rflima1\Desktop\FIND\API\obj\Debug\netcoreapp2.0\API.dll
-C:\Users\paulo.rflima1\Desktop\FIND\API\obj\Debug\netcoreapp2.0\API.pdb
+C:/Users/paulo.rflima1/Desktop/FIND/API/bin/Debug/netcoreapp2.0/API.deps.json
+C:/Users/paulo.rflima1/Desktop/FIND/API/bin/Debug/netcoreapp2.0/API.runtimeconfig.json
+C:/Users/paulo.rflima1/Desktop/FIND/API/bin/Debug/netcoreapp2.0/API.runtimeconfig.dev.json
+C:/Users/paulo.rflima1/Desktop/FIND/API/bin/Debug/netcoreapp2.0/API.dll
+C:/Users/paulo.rflima1/Desktop/FIND/API/bin/Debug/netcoreapp2.0/API.pdb
+C:/Users/paulo.rflima1/Desktop/FIND/API/obj/Debug/netcoreapp2.0/API.csprojResolveAssemblyReference.cache
+C:/Users/paulo.rflima1/Desktop/FIND/API/obj/Debug/netcoreapp2.0/API.csproj.CoreCompileInputs.cache
+C:/Users/paulo.rflima1/Desktop/FIND/API/obj/Debug/netcoreapp2.0/API.AssemblyInfoInputs.cache
+C:/Users/paulo.rflima1/Desktop/FIND/API/obj/Debug/netcoreapp2.0/API.AssemblyInfo.cs
+C:/Users/paulo.rflima1/Desktop/FIND/API/obj/Debug/netcoreapp2.0/API.dll
+C:/Users/paulo.rflima1/Desktop/FIND/API/obj/Debug/netcoreapp2.0/API.pdb
+/home/ivan/Área de Trabalho/FIND/API/bin/Debug/netcoreapp2.0/API.deps.json
+/home/ivan/Área de Trabalho/FIND/API/bin/Debug/netcoreapp2.0/API.runtimeconfig.json
+/home/ivan/Área de Trabalho/FIND/API/bin/Debug/netcoreapp2.0/API.runtimeconfig.dev.json
+/home/ivan/Área de Trabalho/FIND/API/bin/Debug/netcoreapp2.0/API.dll
+/home/ivan/Área de Trabalho/FIND/API/bin/Debug/netcoreapp2.0/API.pdb
+/home/ivan/Área de Trabalho/FIND/API/obj/Debug/netcoreapp2.0/API.csprojAssemblyReference.cache
+/home/ivan/Área de Trabalho/FIND/API/obj/Debug/netcoreapp2.0/API.csproj.CoreCompileInputs.cache
+/home/ivan/Área de Trabalho/FIND/API/obj/Debug/netcoreapp2.0/API.AssemblyInfoInputs.cache
+/home/ivan/Área de Trabalho/FIND/API/obj/Debug/netcoreapp2.0/API.AssemblyInfo.cs
+/home/ivan/Área de Trabalho/FIND/API/obj/Debug/netcoreapp2.0/API.dll
+/home/ivan/Área de Trabalho/FIND/API/obj/Debug/netcoreapp2.0/API.pdb
+C:\Users\ivan.sjunior\Desktop\FIND\API\bin\Debug\netcoreapp2.0\API.deps.json
+C:\Users\ivan.sjunior\Desktop\FIND\API\bin\Debug\netcoreapp2.0\API.runtimeconfig.json
+C:\Users\ivan.sjunior\Desktop\FIND\API\bin\Debug\netcoreapp2.0\API.runtimeconfig.dev.json
+C:\Users\ivan.sjunior\Desktop\FIND\API\bin\Debug\netcoreapp2.0\API.dll
+C:\Users\ivan.sjunior\Desktop\FIND\API\obj\Debug\netcoreapp2.0\API.csproj.CoreCompileInputs.cache
+C:\Users\ivan.sjunior\Desktop\FIND\API\obj\Debug\netcoreapp2.0\API.AssemblyInfoInputs.cache
+C:\Users\ivan.sjunior\Desktop\FIND\API\obj\Debug\netcoreapp2.0\API.AssemblyInfo.cs
+C:\Users\ivan.sjunior\Desktop\FIND\API\obj\Debug\netcoreapp2.0\API.dll
+C:\Users\ivan.sjunior\Desktop\FIND\API\obj\Debug\netcoreapp2.0\API.pdb
+C:\Users\ivan.sjunior\Desktop\FIND\API\bin\Debug\netcoreapp2.0\API.pdb
+C:\Users\ivan.sjunior\Desktop\FIND\API\obj\Debug\netcoreapp2.0\API.csprojResolveAssemblyReference.cache

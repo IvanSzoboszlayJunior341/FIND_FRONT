@@ -16,12 +16,15 @@ namespace Find.Models
         
         [StringLength(255)]
         public string Requisitos { get; set; }
-        [Required]
+        
+        public string imagen {get;set;}
+        
         public ICollection<CursoProfessor> CursoProfessor { get; set; }
 
-        [Required]
+        
         public ICollection<Aula> Aula { get; set; }
         public int Progresso { get; set; }
+        [Required]
         public string Categoria { get; set; }
         public ICollection<Acesso> Acesso { get; set; }
     }

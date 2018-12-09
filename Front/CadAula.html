@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Cadastro de Aula</title>
+
+    <style>
+    .centro{
+        text-align: center;
+      }
+    .lado{
+        text-align: right;
+    }
+
+    .caixa{
+        margin-top: 150px;
+        background-color: #fff;
+        width: 50%;
+        padding: 10px;
+        box-shadow: 1px 1px 1px #000;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        
+      }
+    body{
+        background-color:white;
+        background-image:url("images/marvin-meyer-571072-unsplash.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;  
+      }
+    </style>
+  </head>
+  
+<body onload="carrega();">
+    <div class="caixa">
+        <h3 class="centro">Cadastro de Aula </h3>
+            
+        <form onsubmit="return false;">
+                        
+            <div class="form-group">
+                <label for="IdCurso">Selecione o Cursos</label>
+                <select class="form-control" id="IdCurso">
+                </select>
+            </div>
+        
+            <div class="form-group">
+                <label for="nome_aula">Nome da Aula</label>
+                <input type="text" class="form-control" id="nome_aula" maxlength="60" size="2">
+            </div>
+
+            <div class="form-group">
+                <label for="contexto">Descrição da Aula</label>
+                <textarea class="form-control" id="contexto" rows="3"  maxlength="255" size="10"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="inportvideo">Inport de AULA no YouTube</label>
+                <textarea class="form-control" id="inportvideo" rows="3"  maxlength="255" size="10"></textarea>
+            </div>
+            
+
+
+            <button type="submit" onclick="cadastrar();" class="btn btn-primary">CADASTRAR</button>
+            
+            <a class="brn brn-primary lado" href="Curso.html" >Sair</a>
+        </form>
+
+    </div>
+
+    <script>
+        function carrega(){
+            carregarCurso(); 
+        }
+
+        function carregarCurso(){
+            var url="http://localhost:5000/API/Curso";
+           
+           var xhr = new XMLHttpRequest();
+
+           xhr.open("GET",url,true);
+
+           var listausuario = document.getElementById("IdCurso");
+
+           // vamos listar os usuario e cria a option 
+           xhr.onload = function(){
+               var json = JSON.parse(this.response);
+
+               if(xhr.status >= 200 && xhr.status < 400){
+                   json.forEach(dados =>{
+                       var option = document.createElement("option");
+                       option.value = dados.id;
+                       option.text= dados.nomeCurso;
+                       //vamos adicionar as option criadas no select
+                       listausuario.append(option);
+                   });
+               }
+           }
+           xhr.send();               
+        }
+
+        function cadastrar(){
+            var url="http://localhost:5000/api/Aula";
+            //vamos pegar o s dados do formulario
+            var nome = document.getElementById("nome_aula").value;
+            var contexto = document.getElementById("contexto").value;
+            var inportvideo = document.getElementById("inportvideo").value;
+            var IdCurso = document.getElementById("IdCurso").value;
+
+            /*Vamos "casar" os campos da api com os valores do formulário*/
+
+            var dados = {};
+            dados.nomeAula = nome;
+            dados.aulaContexto = contexto;
+            dados.aulaCaminho = inportvideo;
+            dados.IdCurso = IdCurso;
+            
+            //abaixo iremos passar para o formato  de json
+            var json = JSON.stringify(dados)
+
+            //Vamos fazer uma instancia do objento XMLHttpRequest
+            var xhr = new XMLHttpRequest();
+
+            /*Vamos expor a url com o comando open e passar o verbo do rest (POST),a url da api e se aceita o retorno ou não (true)*/
+            xhr.open("POST",url,true)
+
+            //Vamos dizer como será a passagem de dados a api.Neste caso iremos usar o json
+
+            xhr.setRequestHeader("Content-type","application/json;charset=utf-8");
+
+            xhr.onload = function(){
+                if(xhr.status >= 200 && xhr.status < 400){
+                    alert("Dados cadastrados");
+                    console.log(xhr);
+                    window.location.replace("CadAula.html")
+                }
+                else{
+                    alert("Erro ao tentar cadastrar");
+                }
+            }
+            xhr.send(json);
+        }    
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>

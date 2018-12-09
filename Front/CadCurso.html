@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Cadastro de curso</title>
+
+    <style>
+    .centro{
+        text-align: center;
+      }
+
+    .caixa{
+        margin-top: 150px;
+        background-color: #fff;
+        width: 50%;
+        padding: 10px;
+        box-shadow: 1px 1px 1px #000;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        
+      }
+    body{
+        background-color:white;
+        background-image:url("images/marvin-meyer-571072-unsplash.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;  
+      }
+    </style>
+  </head>
+  
+<body>
+    <div class="caixa">
+        <h3 class="centro">Cadastro de Curso</h3>
+        <form onsubmit="return false;">
+            <div class="form-group">
+                <label for="nomeCurso">Nome do Curso</label>
+                <input type="text" class="form-control" id="nomeCurso">
+            </div>
+            
+            <div class="form-group">
+                <label for="categoria">Categoria</label>
+                <select class="form-control" id="categoria">
+                    <option value="Mobile">Mobile</option>
+                    <option value="infraestrutura">infraestrutura</option>
+                    <option value="Programação">Programação</option>
+                    <option value="Banco de dados">Banco de Dados</option>
+                    <option value="Front-end">Front-end</option>
+                    <option value="Back-End">Back-End</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="requisitos">Requisitos Do Curso</label>
+                <textarea class="form-control" id="requisitos" rows="3" maxlength="255" size="10"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="imagem">Imagem de Capa</label>
+                <textarea class="form-control" id="imagem" rows="3" maxlength="255" size="10"></textarea>
+            </div>
+            <button type="button" onclick="cadastrar();" class="btn btn-primary">Cadastrar</button>
+            <a class="btn btn-primary" href="CadAula.html">Aula</a>
+        </form>
+    </div>
+
+    <script>
+        function cadastrar(){
+            var url="http://localhost:5000/api/Curso";
+
+            var nomecurso = document.getElementById("nomeCurso").value;
+            var categoria = document.getElementById("categoria").value;
+            var requisitos = document.getElementById("requisitos").value;
+            var imagen = document.getElementById("imagem").value;
+
+            var dados={};
+            dados.nomeCurso = nomecurso;
+            dados.Requisitos = requisitos;
+            dados.Categoria = categoria;
+            dados.imagen = imagen;
+
+            var json =  JSON.stringify(dados)
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open("POST",url,true)
+    
+            xhr.setRequestHeader("Content-type","application/json;charset=utf-8");
+
+            xhr.onload = function(){
+                if(xhr.status >= 200 && xhr.status < 400){
+                    alert("Dados cadastrados com Sucesso");
+                    console.log(xhr);
+                    window.location.replace("CadAula.html?inf="+tokenUS.accessToken);
+                }
+                else{
+                    alert("Erro ao tentar cadastrar");
+                }
+            }
+            xhr.send(json);
+        };
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
